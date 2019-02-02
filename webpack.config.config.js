@@ -68,8 +68,10 @@ module.exports = {
     CopyWebpackPlugin([
       {from: path.resolve(__dirname, 'src/index.html')},
       {from: path.resolve(__dirname, 'src/styles.css')},
-      {from: path.resolve(__dirname ,'node_modules/systemjs-plugin-babel/plugin-babel.js'), to: 'src/plugin-babel.js'},
-      {from: path.resolve(__dirname, 'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js'), to: 'src/systemjs-babel-browser.js'},
+      {from: path.resolve(__dirname ,'node_modules/systemjs-plugin-babel/babel-helpers')},
+      {from: path.resolve(__dirname ,'node_modules/systemjs-plugin-babel/babel-helpers.js')},
+      {from: path.resolve(__dirname ,'node_modules/systemjs-plugin-babel/plugin-babel.js')},
+      {from: path.resolve(__dirname, 'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js')},
     ]),
     new CleanWebpackPlugin(['build']),
    

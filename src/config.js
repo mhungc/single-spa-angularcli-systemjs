@@ -13,6 +13,8 @@ SystemJS.config({
 singleSpa.registerApplication('navbar', SystemJS.import('navbar!sofe'), isActive.navbar)
 singleSpa.registerApplication('people', SystemJS.import('people!sofe'), isActive.people)
 singleSpa.registerApplication('planets', SystemJS.import('planets!sofe'), isActive.planets)
-singleSpa.registerApplication('marvel', SystemJS.import('marvel!sofe'), isActive.marvel)
+singleSpa.registerApplication('marvel', () => { 
+    return SystemJS.import('marvelinline!sofe').then( () => SystemJS.import('marvel!sofe'))
+}, isActive.marvel)
 
 singleSpa.start()
