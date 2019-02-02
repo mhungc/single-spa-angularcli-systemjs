@@ -17,3 +17,7 @@ export function people(location) {
 export function planets(location) {
   return prefix(location, 'planets')
 }
+
+export function marvel(location) {
+  return prefix(location, 'marvel')
+}

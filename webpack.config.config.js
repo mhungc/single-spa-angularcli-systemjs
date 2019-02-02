@@ -4,8 +4,11 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+
 module.exports = {
-  entry: './src/config.js',
+  entry: {
+    config: './src/config.js'
+  },
   output: {
     filename: 'config.js',
     library: 'config',
@@ -65,8 +68,11 @@ module.exports = {
     CopyWebpackPlugin([
       {from: path.resolve(__dirname, 'src/index.html')},
       {from: path.resolve(__dirname, 'src/styles.css')},
+      {from: path.resolve(__dirname ,'node_modules/systemjs-plugin-babel/plugin-babel.js'), to: 'src/plugin-babel.js'},
+      {from: path.resolve(__dirname, 'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js'), to: 'src/systemjs-babel-browser.js'},
     ]),
     new CleanWebpackPlugin(['build']),
+   
   ],
   devtool: 'source-map',
   externals: [

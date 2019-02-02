@@ -6,7 +6,8 @@
     <title></title>
   </head>
   <body>
-
+     <!-- <script src="../node_modules/systemjs-plugin-babel/plugin-babel.js"></script>
+     <script src="../node_modules/systemjs-plugin-babel/systemjs-babel-browser.js"></script> -->
     <script>
       window.sofeManifest = {
         sofe: {
@@ -15,6 +16,7 @@
             "people": "http://localhost:8236/people.js",
             "planets": "http://localhost:8237/planets.js",
             "fetchWithCache": "http://localhost:8238/fetchWithCache.js",
+            "marvel": "http://localhost:4200/singleSpaEntry.js",
           }
         }
       }
@@ -25,7 +27,9 @@
 
     <!-- Load the application -->
     <script>
+     
       SystemJS.import('./config.js')
+
     </script>
 
     <!-- Static navbar -->

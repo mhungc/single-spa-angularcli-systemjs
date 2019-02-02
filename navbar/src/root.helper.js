@@ -6,5 +6,9 @@ export const links = [
   {
     name: 'Planets',
     href: '/planets'
+  },
+  {
+    name: 'Marvel',
+    href: '/marvel'
   }
 ]
