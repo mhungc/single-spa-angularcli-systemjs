@@ -17,7 +17,8 @@ const { NoEmitOnErrorsPlugin, SourceMapDevToolPlugin, NamedModulesPlugin } = req
 const nodeModules = path.join(process.cwd(), 'node_modules');
 const realNodeModules = fs.realpathSync(nodeModules);
 const genDirNodeModules = path.join(process.cwd(), 'src', '$$_gendir', 'node_modules');
-const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
+// const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
+const entryPoints = ["loader"];
 const hashFormat = {"chunk":"","extract":"","file":".[hash:20]","script":""};
 const baseHref = "";
 const deployUrl = "";
@@ -889,6 +890,7 @@ module.exports = env => {
       output: {
         path: __dirname + "/lib",
         filename: "[name].js",
+        library:"loader",
         libraryTarget: 'amd'
       },
 
@@ -896,7 +898,9 @@ module.exports = env => {
     //add here extra packages when needed, add it in the scripts_list_creator files filter to exclude it from the build
     // Object.assign({
     //   entry: {
-    //     menu: "./src/dev-apps/menu.ts"
+    //     polyfills: [
+    //              "./src\\polyfills.ts"
+    //            ],
     //   },
     //   output: {
     //     path: __dirname + "/lib",
